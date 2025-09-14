@@ -1,15 +1,19 @@
-# HW# - Title
-### Your Name
+# HW1 - Web Science Intro
+### Bryson Coons
 ### CS 432, Fall 2025
-### Due Date
+### September 14, 2025
 
 # Q1
+For this question, I began by analyzing which of the sites linked together within themselves to find the SCC sites. Then from there, I analyzed how the remaining sites linked related to the SCC. From there, I was able to begin constructing a directed graph, beginning with the SCC, and could move letters around as necessary. I was then able to determine which sites served as which "parts" of their ecosystem.
 
-*You may copy the question into your report, but make sure that you make it clear where the question ends and your answer begins.*
+SCC - A B C D G
+IN - F M
+OUT - L H
+Tendril - E (serves an IN tendril)
+Tube - O J N (connects between IN and OUT)
+Disconnected - K I (serves as its own little ecosystem)
 
-## Answer
-
-The example figure below shows the growth in the number of websites between 1993 and 1996.
+The figure below shows my directed graph.
 
 ![Q1 Directed Graph](20250914_180019.jpg)
 
