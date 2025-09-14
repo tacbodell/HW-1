@@ -11,7 +11,7 @@
 
 The example figure below shows the growth in the number of websites between 1993 and 1996.
 
-![Q1 Directed Graph](jpg)
+![Q1 Directed Graph](20250914_180019.jpg)
 
 *If you want to include code in your report, you can insert a screenshot (if it's legible), or you can copy/paste the code into a fenced code block.*
 
