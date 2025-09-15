@@ -17,50 +17,38 @@ The figure below shows my directed graph.
 
 ![Q1 Directed Graph](20250914_180019.jpg)
 
-*If you want to include code in your report, you can insert a screenshot (if it's legible), or you can copy/paste the code into a fenced code block.*
-
-```python
-#!/usr/local/bin/python3
-# testargs.py
-
-import sys
-
-print ("{} is the name of the script." . format(sys.argv[0]))
-print ("There are {} arguments: {}" . format(len(sys.argv), str(sys.argv)))
-
-for ind, arg in enumerate(sys.argv):
-    print ("[{}]: {} {}".format(ind,arg,sys.argv[ind]))
-```
-
-The table below shows a simple table.  
-
-|Week|Date|Topic|
-|:---|:---|:---|
-|1|Sep 1, 3|Introduction, What's Vis and Why Do It?|
-|2|Sep 8, 10|Data and Data Cleaning|
-|3|Sep 15, 17|Marks and Channels|
-
-The table below shows an example confusion matrix (you'll see this term later) from <https://en.wikipedia.org/wiki/Confusion_matrix>.
-
-| | |Actual||
-|---|---|---|---|
-|**Predicted**| |Cat|Dog|
-| |Cat|5 (TP)|3 (FP)|
-| |Dog|2 (FN)|3 (TN)|
-
-*You must provide some discussion of every answer. Discuss how you arrived at the answer and the tools you used. Discuss the implications of your answer.*
-
 # Q2
+PART A - I loaded the given URL in my browser:
+![Image](image.png)
 
-## Answer
+PART B - I used a curl command using the following options:
+-i to show response headers
+-L to follow redirects
+-A to set the User-Agent
+![Image](image2.png)
+
+PART C - I used a curl command using -L and -A again, but also a new option:
+-o output.html to save the HTML content into a file, "output.html"
+i didn't use -i here because i only wanted the HTML body.
+![image](image3.png)
+
+PART D - After running the command, I just loaded the file it output in my browser.
+![image](image4.png)
 
 # Q3
 
-## Answer
+To complete this task, I wrote a Python script called collect-webpages.py that uses the requests and BeautifulSoup libraries. The goal was to start from a seed webpage, collect links, and filter them so that I only keep URIs that point to HTML pages larger than 1000 bytes.
+
+-I used the requests library with a 5-second timeout to fetch pages. This prevents the program from hanging on dead sites.
+-I parsed each page's HTML using the BeautifulSoup library, and converted relative to absolute links with urllib.parse.urljoin.
+-I stored URI's in a set to make sure they're all unique. Many sites hold duplicate or repeated links, so this was important.
+-Once a seed page is processed using these libraries, the program randomly selects one of the already-collected URI's as the next seed and crawls in a for loop. In this way, the program branches itself without user input.
+-The only seed site I used was https://weiglemc.github.io/
+
+The 500+ URI's collected can be found in collected_uris.txt
 
 # References
 
-*Every report must list the references that you consulted while completing the assignment. If you consulted a webpage, you must include the URL.  These are just a couple examples.*
-
-* Stack Overflow, How can I parse (read) and use JSON in Python?, <https://stackoverflow.com/questions/7771011/how-can-i-parse-read-and-use-json-in-python>
-* ChatGPT conversation, Initial prompt: "write a python line to detect if a string ends with .png", <https://chat.openai.com/share/5de76e93-c26b-4665-a0fc-b782b01a9285>
+* BeautifulSoup documentation, <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>
+* Python urllib.parse.urljoin documentation, <https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urljoin>
+* Real Python: Web Scraping with BeautifulSoup and Requests, <https://realpython.com/beautiful-soup-web-scraper-python/>
