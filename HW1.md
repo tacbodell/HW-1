@@ -22,13 +22,13 @@ PART A - I loaded the given URL in my browser:
 ![Image](image.png)
 
 PART B - I used a curl command using the following options:
--i to show response headers
--L to follow redirects
--A to set the User-Agent
+-i to show response headers; 
+-L to follow redirects; 
+-A to set the User-Agent; 
 ![Image](image2.png)
 
 PART C - I used a curl command using -L and -A again, but also a new option:
--o output.html to save the HTML content into a file, "output.html"
+-o output.html to save the HTML content into a file, "output.html"; 
 i didn't use -i here because i only wanted the HTML body.
 ![image](image3.png)
 
