@@ -39,11 +39,11 @@ PART D - After running the command, I just loaded the file it output in my brows
 
 To complete this task, I wrote a Python script called collect-webpages.py that uses the requests and BeautifulSoup libraries. The goal was to start from a seed webpage, collect links, and filter them so that I only keep URIs that point to HTML pages larger than 1000 bytes.
 
-*I used the requests library with a 5-second timeout to fetch pages. This prevents the program from hanging on dead sites.
-*I parsed each page's HTML using the BeautifulSoup library, and converted relative to absolute links with urllib.parse.urljoin.
-*I stored URI's in a set to make sure they're all unique. Many sites hold duplicate or repeated links, so this was important.
-*Once a seed page is processed using these libraries, the program randomly selects one of the already-collected URI's as the next seed and crawls in a for loop. In this way, the program branches itself without user input.
-*The only seed site I used was https://weiglemc.github.io/
+* I used the requests library with a 5-second timeout to fetch pages. This prevents the program from hanging on dead sites.
+* I parsed each page's HTML using the BeautifulSoup library, and converted relative to absolute links with urllib.parse.urljoin.
+* I stored URI's in a set to make sure they're all unique. Many sites hold duplicate or repeated links, so this was important.
+* Once a seed page is processed using these libraries, the program randomly selects one of the already-collected URI's as the next seed and crawls in a for loop. In this way, the program branches itself without user input.
+* The only seed site I used was https://weiglemc.github.io/
 
 The 500+ URI's collected can be found in collected_uris.txt
 
